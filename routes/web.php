@@ -22,3 +22,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::prefix('usuarios')->group(function(){
+	Route::get('/', 'UsuariosController@index');
+	Route::get('/{usuario}', 'UsuariosController@edit')->name('usuarios.edit');
+	Route::get('/view/{usuario}', 'UsuariosController@view')->name('usuarios.view');
+});

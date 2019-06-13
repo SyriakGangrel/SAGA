@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'green',
 
     /*
     |--------------------------------------------------------------------------
@@ -123,7 +123,7 @@ return [
         ],
         [
             'text'        => 'Users',
-            'url'         => 'admin/pages',
+            'url'         => 'usuarios',
             'icon'        => 'file',
             'label'       => 10,
             'label_color' => 'success',
