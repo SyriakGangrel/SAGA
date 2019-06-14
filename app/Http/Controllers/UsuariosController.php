@@ -26,7 +26,8 @@ class UsuariosController extends Controller
     {
         $usuarios = UsuariosService::getListaUsuarios();
         $usuarios = $usuarios->all();
-        return view('usuarios.index', compact('usuarios'));
+        $count = count($usuarios);
+        return view('usuarios.index', compact('usuarios','count'));
     }
     
     public function edit($usuario_id)
@@ -42,6 +43,17 @@ class UsuariosController extends Controller
         $usuario = $usuario->first();
         $readonly = 'readonly = "" disabled = ""';
         return view('usuarios.view', compact('usuario','readonly'));
+    }
+
+
+    public function store(Request $request)
+    {
+        $this->validate($request,[
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+        
+        return 123;
     }
 
 }

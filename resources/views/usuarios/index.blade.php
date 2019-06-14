@@ -3,11 +3,75 @@
 @section('title', 'Saga- Usuarios')
 
 @section('js')
-<script type="text/javascript" src="{{ asset('js/usuarios/form-usuarios.js') }}" ></script>
+	<script type="text/javascript" src="jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="dist/Chart.bundle.min.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+		var datos = {
+			labels : ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto","Setembro","outubro","Novembro","Dezembro"],
+			datasets : [{
+				label : "Requisições Serviço",
+				backgroundColor : "rgba(220,220,220,0.5)",
+				data : [4, 12, 9, 7, 5, 3]
+			},
+			{
+				label : "Requisições de Produto",
+				backgroundColor : "rgba(151,187,205,0.5)",
+				data : [10,7,15,6,30,12]
+			},
+			{
+				label : "Adiantamentos",
+				backgroundColor : "rgba(151,100,205,0.5)",
+				data : [9,6,15,6,17,20]
+			}
+			]
+		};
+
+		var canvas = document.getElementById('chart').getContext('2d');
+		window.bar = new Chart(canvas, {
+			type : "bar",
+			data : datos,
+			options : {
+				elements : {
+					rectangle : {
+						borderWidth : 1,
+						borderColor : "rgb(0,255,0)",
+						borderSkipped : 'bottom'
+					}
+				},
+				responsive : true,
+				title : {
+					display : true,
+					text : "Gráfico de Requisições"
+				}
+			}
+		});
+	});
+
+</script>
 @stop
 
 @section('content_header')
-    <h1>Usuários SAGA</h1>
+
+ <div class="box box-solid box-primary">
+ 	 <div class="box-header with-border">
+ 	 	<div class="box-title">
+ 	 		<i class="fa fa-money"></i> Teste
+ 		</div>
+ 	</div>
+
+	<div class="box-body">
+
+		<div id="canvas-container" style="width:90%;">
+			<canvas id="chart" width="900" height="350"></canvas>
+		</div>
+	</div>
+</div>
+
+
+
 @stop
 
 
@@ -25,7 +89,8 @@
 		<div class="form-group col-md-12 col-sm-12 col-xs-12 required">
 			<div class="box box-primary">
 	            <div class="box-header">
-	              <h3 class="box-title">Tabelas de Usuários</h3>
+	              <h3 class="box-title"> Usuários</h3>
+	              <small class="label pull-right bg-blue">{{$count}}</small>
 	            </div>            
 	            	<div class="box-body">
 
