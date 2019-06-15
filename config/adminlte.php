@@ -115,8 +115,8 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Paginas',
+            'url'         => 'paginas',
             'icon'        => 'file',
             'label'       => 4,
             'label_color' => 'success',

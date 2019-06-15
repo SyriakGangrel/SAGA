@@ -24,10 +24,20 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+
+Route::prefix('paginas')->group(function(){
+	Route::get('/', 'PaginasController@index')->name('paginas');
+	Route::get('/{pagina_id}', 'PaginasController@edit')->name('paginas.edit');
+	Route::get('/view/{pagina_id}', 'PaginasController@view')->name('paginas.view');
+	Route::post('/store', 'PaginasController@store')->name('paginas.store');
+
+});
+
+
 Route::prefix('usuarios')->group(function(){
 	Route::get('/', 'UsuariosController@index');
-	Route::get('/{usuario}', 'UsuariosController@edit')->name('usuarios.edit');
-	Route::get('/view/{usuario}', 'UsuariosController@view')->name('usuarios.view');
+	Route::get('/{usuario_id}', 'UsuariosController@edit')->name('usuarios.edit');
+	Route::get('/view/{usuario_id}', 'UsuariosController@view')->name('usuarios.view');
 	Route::post('/store', 'UsuariosController@store')->name('usuarios.store');
 
 });
