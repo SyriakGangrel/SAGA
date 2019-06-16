@@ -24,6 +24,15 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::prefix('cadastro')->group(function(){
+	Route::get('/create', 'CadastroController@create')->name('cadastro.create');
+	Route::get('/', 'CadastroController@index')->name('cadastro');
+	Route::get('/{cadastro_id}', 'CadastroController@edit')->name('cadastro.edit');
+	Route::get('/view/{cadastro_id}', 'CadastroController@view')->name('cadastro.view');
+	Route::post('/store', 'CadastroController@store')->name('cadastro.store');
+
+});
+
 
 Route::prefix('paginas')->group(function(){
 	Route::get('/create', 'PaginasController@create')->name('paginas.create');

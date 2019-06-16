@@ -114,10 +114,18 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+
+        [
+            'text'        => 'Cadastro',
+            'url'         => 'cadastro',
+            'icon'        => 'fa fa-users',
+            'label'       => 100,
+            'label_color' => 'primary',
+        ],
         [
             'text'        => 'Paginas',
             'url'         => 'paginas',
-            'icon'        => 'file',
+            'icon'        => 'fa fa-user',
             'label'       => 4,
             'label_color' => 'success',
         ],
