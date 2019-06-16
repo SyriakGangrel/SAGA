@@ -43,12 +43,29 @@ class PaginasController extends Controller
 
     public function view($pagina_id)
     {
+        $paginas = PaginasService::getListaPaginas();
         $pagina = PaginasService::getListaPaginaById($pagina_id);
         $pagina = $pagina->first();
         $modificador = UsuariosService::getListaUsuariosById($pagina->user);
         $modificador = $modificador->first();
         // dd($modificador);
-        return view('paginas.view', compact('pagina','modificador'));
+        return view('paginas.view', compact('pagina','modificador', 'paginas'));
     }
+
+
+    public function create()
+    {
+        $paginas = [];
+        return view('paginas.create', compact('paginas'));
+    }
+
+
+    public function store(Request $request)
+    {
+        $data = $request->all();
+        $pagina_id = PaginasService::savePagina($data);
+        return redirect()->route('paginas')->with('msgSuccess', 'Salvo com Sucesso');
+    }
+
 
 }

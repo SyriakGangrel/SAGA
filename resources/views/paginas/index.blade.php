@@ -1,9 +1,15 @@
 @extends('adminlte::page')
 
-@section('title', 'Saga- Usuarios')
+@section('title', 'Saga- Páginas')
 
 @section('js')
-	
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+  })
+</script>
 @stop
 
 @section('content_header')
@@ -15,17 +21,12 @@
 <div class="form-group col-md-12 col-sm-12 col-xs-12 required">
 			<div class="box box-primary">
 	            <div class="box-header">
-	              <h3 class="box-title"><i class="fa fa-globe"></i> <b>Paginas</b></h3>
-	            	<div class="box-tools">
-                		<div class="input-group input-group-sm" style="width: 150px;">
-                  			<input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-                			<div class="input-group-btn">
-                    			<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                  			</div>
-                		</div>
-        			</div>  
-	            <small class="label pull-right bg-blue"></small>
+	                <h3 class="box-title"><i class="fa fa-globe"></i> <b>Paginas</b></h3>
+	                <div class="form-group col-md-2 col-sm-2 col-xs-12 pull-right">
+						<a class="btn btn-block btn-primary " href="{{route('paginas.create')}}"> <i class="fa fa-globe"></i> Nova Pagina </a>
+	                </div>
 	            </div>            
+
 	            	<div class="box-body">
 
 						<div class="form-group col-md-12 col-sm12 col-xs-12 required">

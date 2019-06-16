@@ -26,6 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::prefix('paginas')->group(function(){
+	Route::get('/create', 'PaginasController@create')->name('paginas.create');
 	Route::get('/', 'PaginasController@index')->name('paginas');
 	Route::get('/{pagina_id}', 'PaginasController@edit')->name('paginas.edit');
 	Route::get('/view/{pagina_id}', 'PaginasController@view')->name('paginas.view');
