@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\CadastroService;
+use App\Services\UsuariosService;
 
 class CadastroController extends Controller
 {
@@ -26,20 +27,28 @@ class CadastroController extends Controller
     public function index()
     {
         $cadastros = CadastroService::getListaCadastro();
-        $cadastros =$cadastros->all();
-        return view('cadastro.index', compact('cadastros'));
+        $cadastros = $cadastros->all();
+        $count = count($cadastros);
+        return view('cadastro.index', compact('cadastros','count'));
     }
     
     public function edit($cadastro_id)
     {
         $cadastro = CadastroService::getCadastroById($cadastro_id);
-        return view('cadastro.edit', compact('cadastro'));
+        $cadastro = $cadastro->first();
+        $modificador = UsuariosService::getListaUsuariosById($cadastro->user_mod);
+        $modificador = $modificador->first();
+        return view('cadastro.edit', compact('cadastro','modificador'));
     }
 
     public function view($cadastro_id)
     {
         $cadastro = CadastroService::getCadastroById($cadastro_id);
-        return view('cadastro.view', compact('cadastro'));
+        $cadastro = $cadastro->first();
+        $modificador = UsuariosService::getListaUsuariosById($cadastro->user_mod);
+        $modificador = $modificador->first();
+
+        return view('cadastro.view', compact('cadastro','modificador'));
     }
 
 

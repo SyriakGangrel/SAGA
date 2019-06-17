@@ -29,10 +29,9 @@ class CadastroService
 
 		 public static function saveCadastro($data)
     {
-    	// dd($data);
         $dados = [
         	'matricula' => $data['matricula'],
-        	'name' => $data['nome'],
+        	'nome' => $data['nome'],
         	'sobrenome' => $data['sobrenome'],
         	'data_nascimento' => $data['data_nascimento'],
         	'telefone' => $data['telefone'],

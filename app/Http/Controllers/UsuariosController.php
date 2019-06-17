@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\UsuariosService;
+use App\Helpers\Utils;
 
 class UsuariosController extends Controller
 {

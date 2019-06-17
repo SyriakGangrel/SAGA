@@ -22,8 +22,8 @@
 
 <div class="form-group col-md-12 col-sm-12 col-xs-12 required">
 			<div class="box box-primary">
-	            <div class="box-header">
-	                <h2 class="box-title"><i class="fa fa-users"></i> <b>Cadastro</b></h2>
+	            <div class="box-header with-border">
+	                <h2 class="box-title"><i class="fa fa-users"></i> <b>Cadastros</b></h2>
 	                <div class="form-group col-md-2 col-sm-2 col-xs-12 pull-right">
 						<a class="btn btn-block btn-primary " href="{{route('cadastro.create')}}"> <i class="fa fa-user-plus"></i> Novo Cadastro </a>
 	                </div>
@@ -70,10 +70,10 @@
 								</div>
 							</div>
 						</div>
-
-
-
 					</div>
+		<div class="box-footer">
+			Teste de Footer
+		</div>
 			</div>
 		</div>
 

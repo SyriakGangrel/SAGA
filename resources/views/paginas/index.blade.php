@@ -20,7 +20,7 @@
 
 <div class="form-group col-md-12 col-sm-12 col-xs-12 required">
 			<div class="box box-primary">
-	            <div class="box-header">
+	            <div class="box-header with-border">
 	                <h3 class="box-title"><i class="fa fa-globe"></i> <b>Paginas</b></h3>
 	                <div class="form-group col-md-2 col-sm-2 col-xs-12 pull-right">
 						<a class="btn btn-block btn-primary " href="{{route('paginas.create')}}"> <i class="fa fa-globe"></i> Nova Pagina </a>
@@ -68,10 +68,11 @@
 								</div>
 							</div>
 						</div>
-
-
-
 					</div>
-			</div>
+		<div class="box-footer">
+			Teste de Footer
 		</div>
+		
+			</div>
+	</div>
 @stop
