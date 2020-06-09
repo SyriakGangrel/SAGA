@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'Saga 2019',
+    'title' => 'Saga 2020',
 
     'title_prefix' => '',
 
