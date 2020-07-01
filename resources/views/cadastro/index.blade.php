@@ -3,13 +3,13 @@
 @section('title', 'Saga- Cadastro Index')
 
 @section('js')
+
 <script>
   $(function () {
-    //Initialize Select2 Elements
     $('.select2').select2()
-
   })
 </script>
+
 @stop
 
 @section('content_header')
@@ -74,8 +74,8 @@
 		<div class="box-footer">
 			Teste de Footer
 		</div>
-			</div>
-		</div>
+	</div>
+</div>
 
 
 @stop
